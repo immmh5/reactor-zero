@@ -37,6 +37,9 @@ jobs:
       - name: Copy public assets
         run: cp -r public/assets dist/assets/
 
+      - name: Write CNAME for custom domain
+        run: echo 'game.qam3.qd.je' > dist/CNAME
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
