@@ -1,0 +1,51 @@
+- generic [ref=e3]:
+  - generic:
+    - banner:
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: بذلة العزل
+          - generic [ref=e31]: OPERATIVE-01
+        - generic [ref=e33]:
+          - generic [ref=e34]: درع الحماية
+          - generic [ref=e35]: 100%
+        - generic [ref=e38]:
+          - generic [ref=e39]: طاقة السلاح (F)
+          - generic [ref=e42]: 100%
+      - generic:
+        - generic [ref=e44]:
+          - generic [ref=e48]:
+            - generic [ref=e49]: استقرار المفاعل
+            - generic [ref=e50]: 75%
+          - generic [ref=e51]: 12:00
+          - generic [ref=e56]:
+            - generic [ref=e57]: النقاط
+            - generic [ref=e58]: "0"
+        - complementary "شريط طاقة الزعيم" [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: حارس المختبر الآلي (المفاعل الأخير)
+            - generic [ref=e65]: 300 / 300
+          - generic [ref=e68]:
+            - generic [ref=e69]: "الدرع الحركي النشط:"
+            - generic [ref=e70]: 100% (ينخفض مع إنجاز مهام الكيمياء)
+      - generic [ref=e71]:
+        - button "تثبيت مؤشر التصويب" [ref=e72]:
+          - generic [ref=e76]: تثبيت التصويب (L)
+        - button "تبديل منظور الكاميرا" [ref=e77]:
+          - generic [ref=e81]: شخص ثالث (V)
+        - button "كتم الصوت" [ref=e82]
+        - button "إيقاف مؤقت" [ref=e87]:
+          - generic [ref=e91]: إيقاف (Esc)
+    - contentinfo:
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - generic [ref=e94]: منهج الحسابات الكيميائية
+          - generic [ref=e95]: المهمة 1 من 5
+        - paragraph [ref=e96]: أنجز حسابات حفظ الكتلة والنسب المولية عبر المحطات الخمس لتعطيل درع المفاعل وهزيمة الروبوت الحارس.
+      - generic [ref=e97]:
+        - generic [ref=e98]: WASD تحرك
+        - generic [ref=e99]: ·
+        - generic [ref=e100]: F إطلاق
+        - generic [ref=e101]: ·
+        - generic [ref=e102]: L تثبيت تصويب
+        - generic [ref=e103]: ·
+        - generic [ref=e104]: V منظور الكاميرا

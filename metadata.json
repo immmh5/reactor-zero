@@ -1,0 +1,8 @@
+{
+  "name": "0 \u003d LAB GUARDIAN: REACTOR ZERO",
+  "description": "3D sci-fi third-person educational action-adventure game set in a futuristic research laboratory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

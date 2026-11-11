@@ -1,0 +1,281 @@
+/**
+ * LAB GUARDIAN - Asset Manifest
+ * Comprehensive manifest of external and custom GLB 3D assets with fallback specifications
+ */
+
+export interface AssetDefinition {
+  id: string;
+  name: string;
+  nameAr: string;
+  category: 'character' | 'enemy' | 'environment' | 'prop' | 'machinery' | 'pickup';
+  glbPath: string; // Target path in public/assets/models/
+  isEssential: boolean;
+  notes: string;
+  scale?: number;
+  orientationOffset?: number; // Local forward orientation offset in radians (e.g. 0 for +Z GLB, Math.PI for -Z)
+  positionOffset?: { x: number; y: number; z: number };
+}
+
+export const ASSET_MANIFEST: Record<string, AssetDefinition> = {
+  // Characters & Players
+  player: {
+    id: 'player',
+    name: 'Lab Guardian Operative',
+    nameAr: 'حارس المختبر - بذلة العزل المتقدمة',
+    category: 'character',
+    glbPath: '/assets/models/player_operative.glb',
+    isEssential: true,
+    scale: 1.0,
+    orientationOffset: 0,
+    notes: 'Rigged humanoid operative in pressurized sci-fi hazmat armor. Source: Khronos / Cesium (Apache 2.0).',
+  },
+
+  // Enemies
+  enemyRobot: {
+    id: 'enemyRobot',
+    name: 'Malfunctioning Patrol Drone',
+    nameAr: 'طائرة استطلاع أمنية معطلة',
+    category: 'enemy',
+    glbPath: '/assets/models/security_drone.glb',
+    isEssential: false,
+    scale: 0.9,
+    notes: 'Hovering patrol bot with amber scanner eye and twin stabilizer fins. Custom procedural GLB generator.',
+  },
+  enemyScout: {
+    id: 'enemyScout',
+    name: 'Security Scout Drone',
+    nameAr: 'طائرة استطلاع سريعة - كشافة',
+    category: 'enemy',
+    glbPath: '/assets/models/enemy_scout.glb',
+    isEssential: false,
+    scale: 0.85,
+    notes: 'Fast hovering robot with agile flight surfaces and rapid plasma blasters. Source: Quaternius (CC0 1.0).',
+  },
+  enemySentinel: {
+    id: 'enemySentinel',
+    name: 'Heavy Armored Sentinel',
+    nameAr: 'روبوت الحراسة الثقيل المصفح',
+    category: 'enemy',
+    glbPath: '/assets/models/enemy_sentinel.glb',
+    isEssential: false,
+    scale: 1.1,
+    notes: 'Ground-based armored titan with reinforced blast plating and concussion artillery. Source: Quaternius (CC0 1.0).',
+  },
+  enemyRangedGuard: {
+    id: 'enemyRangedGuard',
+    name: 'Tactical Ranged Sentry',
+    nameAr: 'حارس رماية تكتيكي عن بعد',
+    category: 'enemy',
+    glbPath: '/assets/models/enemy_ranged_guard.glb',
+    isEssential: false,
+    scale: 0.95,
+    notes: 'Precision ranged robotic combatant maintaining vantage distance. Source: Quaternius (CC0 1.0).',
+  },
+  enemyReconProbe: {
+    id: 'enemyReconProbe',
+    name: 'Automated Recon Probe',
+    nameAr: 'مسبار استطلاع ومراقبة آلي',
+    category: 'enemy',
+    glbPath: '/assets/models/enemy_recon_probe.glb',
+    isEssential: false,
+    scale: 0.75,
+    notes: 'Compact reconnaissance probe for alert scanning and telemetry. Source: Quaternius (CC0 1.0).',
+  },
+  bossRobot: {
+    id: 'bossRobot',
+    name: 'Automated Containment Warden',
+    nameAr: 'روبوت الاحتواء الثقيل (الزعيم الميكانيكي)',
+    category: 'enemy',
+    glbPath: '/assets/models/containment_warden.glb',
+    isEssential: false,
+    scale: 2.2,
+    notes: 'Heavy industrial containment mech with pneumatic limbs and kinetic claws. Source: Khronos Sample Models RiggedFigure (CC-BY 4.0).',
+  },
+
+  // Environmental Architecture (Modular Sci-Fi)
+  modularCorridor: {
+    id: 'modularCorridor',
+    name: 'Reinforced Corridor Connector',
+    nameAr: 'وحدة ممر أمني سداسية معززة',
+    category: 'environment',
+    glbPath: '/assets/models/modular_corridor.glb',
+    isEssential: false,
+    scale: 1.6,
+    notes: 'Modular corridor gateway connecting laboratory wings. Source: Quaternius (CC0 1.0).',
+  },
+  structuralColumn: {
+    id: 'structuralColumn',
+    name: 'Industrial Structural Truss Column',
+    nameAr: 'عمود دعم إنشائي مصفح',
+    category: 'environment',
+    glbPath: '/assets/models/structural_column.glb',
+    isEssential: false,
+    scale: 1.8,
+    notes: 'Heavy load-bearing industrial column truss. Source: Quaternius (CC0 1.0).',
+  },
+  catwalkStairs: {
+    id: 'catwalkStairs',
+    name: 'Industrial Catwalk Stairs',
+    nameAr: 'سلم ممرات صناعية معدني',
+    category: 'environment',
+    glbPath: '/assets/models/catwalk_stairs.glb',
+    isEssential: false,
+    scale: 1.5,
+    notes: 'Modular steel grated industrial staircase. Source: Quaternius (CC0 1.0).',
+  },
+  industrialRamp: {
+    id: 'industrialRamp',
+    name: 'Equipment Access Ramp',
+    nameAr: 'منحدر لوجستي لصيانة المعدات',
+    category: 'environment',
+    glbPath: '/assets/models/industrial_ramp.glb',
+    isEssential: false,
+    scale: 1.5,
+    notes: 'Heavy equipment ramp with safety treads. Source: Quaternius (CC0 1.0).',
+  },
+  ventilationDuct: {
+    id: 'ventilationDuct',
+    name: 'Atmospheric Ventilation Duct',
+    nameAr: 'قناة تهوية ومبادلة ضغط الغازات',
+    category: 'environment',
+    glbPath: '/assets/models/ventilation_duct.glb',
+    isEssential: false,
+    scale: 1.6,
+    notes: 'High-pressure filtered air duct intake. Source: Quaternius (CC0 1.0).',
+  },
+  radarScanner: {
+    id: 'radarScanner',
+    name: 'Atmospheric Telemetry Radar',
+    nameAr: 'رادار المسح البيئي والتتبع',
+    category: 'environment',
+    glbPath: '/assets/models/radar_scanner.glb',
+    isEssential: false,
+    scale: 1.4,
+    notes: 'Rotating sensor dish detecting particulate stability. Source: Quaternius (CC0 1.0).',
+  },
+  antennaMast: {
+    id: 'antennaMast',
+    name: 'Telemetry Antenna Spire',
+    nameAr: 'برج هوائي للاتصالات والبيانات',
+    category: 'environment',
+    glbPath: '/assets/models/antenna_mast.glb',
+    isEssential: false,
+    scale: 1.5,
+    notes: 'High-frequency telemetry communication mast. Source: Quaternius (CC0 1.0).',
+  },
+  modularLabUnit: {
+    id: 'modularLabUnit',
+    name: 'Clean-Room Modular Laboratory Bay',
+    nameAr: 'مقصورة أبحاث معقمة متقدمة',
+    category: 'environment',
+    glbPath: '/assets/models/modular_lab_unit.glb',
+    isEssential: false,
+    scale: 0.8,
+    positionOffset: { x: -1.9, y: 0, z: 2.1 },
+    notes: 'Modular clean-room bay structure. Source: Quaternius (CC0 1.0).',
+  },
+  refinerySilo: {
+    id: 'refinerySilo',
+    name: 'Pressurized Chemical Reactant Silo',
+    nameAr: 'صومعة تخزين الكواشف الكيميائية المضغوطة',
+    category: 'machinery',
+    glbPath: '/assets/models/refinery_silo.glb',
+    isEssential: false,
+    scale: 2.2,
+    notes: 'Massive vertical reactant storage silo with intake valves. Source: Quaternius (CC0 1.0).',
+  },
+  industrialCraneRover: {
+    id: 'industrialCraneRover',
+    name: 'Heavy Refinery Transport Crane',
+    nameAr: 'مركبة نقل ورافعة هيدروليكية ثقيلة',
+    category: 'machinery',
+    glbPath: '/assets/models/industrial_crane_rover.glb',
+    isEssential: false,
+    scale: 1.4,
+    notes: 'Multi-axle industrial transport rover and crane. Source: Quaternius (CC0 1.0).',
+  },
+
+  // High-Fidelity PBR Machinery
+  refineryEngine: {
+    id: 'refineryEngine',
+    name: 'Dual-Piston Chemical Balance Engine',
+    nameAr: 'محرك ميكانيكي ثنائي الأسطوانات لمعايرة الكتل',
+    category: 'machinery',
+    glbPath: '/assets/models/refinery_engine.glb',
+    isEssential: false,
+    scale: 0.016, // Engine original scale is large, adjusted for game world
+    notes: 'High-precision mechanical dual-cylinder engine with reciprocating shafts. Source: Khronos Sample Models (CC0).',
+  },
+  refineryGearbox: {
+    id: 'refineryGearbox',
+    name: 'High-Torque Reduction Gearbox Assembly',
+    nameAr: 'وحدة تروس هيدروليكية لتحويل الطاقة الكيميائية',
+    category: 'machinery',
+    glbPath: '/assets/models/refinery_gearbox.glb',
+    isEssential: false,
+    scale: 0.05,
+    notes: 'Industrial gearbox assembly with interlocking mechanical gearing. Source: Khronos Sample Models (CC0).',
+  },
+
+  // Tactical Pickups & Props
+  pickupHealth: {
+    id: 'pickupHealth',
+    name: 'Restorative Nanite Health Pod',
+    nameAr: 'كبسولة نانوية لتجديد الحيوية',
+    category: 'pickup',
+    glbPath: '/assets/models/pickup_health.glb',
+    isEssential: false,
+    scale: 1.2,
+    notes: 'Luminous health replenishment canister. Source: Quaternius (CC0 1.0).',
+  },
+  pickupEnergy: {
+    id: 'pickupEnergy',
+    name: 'High-Density Plasma Battery',
+    nameAr: 'خلية طاقة كهرومغناطيسية مركزة',
+    category: 'pickup',
+    glbPath: '/assets/models/pickup_energy.glb',
+    isEssential: false,
+    scale: 1.2,
+    notes: 'Plasma energy recharge battery. Source: Quaternius (CC0 1.0).',
+  },
+  pickupAmmo: {
+    id: 'pickupAmmo',
+    name: 'Ion Bolt Munitions Pod',
+    nameAr: 'شاحن ذخيرة البلازما المتأينة',
+    category: 'pickup',
+    glbPath: '/assets/models/pickup_ammo.glb',
+    isEssential: false,
+    scale: 1.2,
+    notes: 'Ballistic ammo supply pod. Source: Quaternius (CC0 1.0).',
+  },
+  pickupKeycard: {
+    id: 'pickupKeycard',
+    name: 'Encrypted Security Access Keycard',
+    nameAr: 'بطاقة وصول مشفرة لبوابات المنشأة',
+    category: 'pickup',
+    glbPath: '/assets/models/pickup_keycard.glb',
+    isEssential: false,
+    scale: 1.2,
+    notes: 'Access security keycard. Source: Quaternius (CC0 1.0).',
+  },
+  resourceCrate: {
+    id: 'resourceCrate',
+    name: 'Tactical Resource Crate',
+    nameAr: 'صندوق المؤن والذخيرة التكتيكي',
+    category: 'prop',
+    glbPath: '/assets/models/resource_crate.glb',
+    isEssential: false,
+    scale: 1.0,
+    notes: 'Sci-fi animated supply crate container. Source: Khronos Sample Models BoxAnimated (CC0).',
+  },
+  damagedHelmet: {
+    id: 'damagedHelmet',
+    name: 'Damaged Operative Helmet Artifact',
+    nameAr: 'خوذة أمنية متضررة من الحادث',
+    category: 'prop',
+    glbPath: '/assets/models/damaged_helmet.glb',
+    isEssential: false,
+    scale: 1.0,
+    notes: 'High-detail PBR battle-damaged sci-fi operative helmet. Source: Khronos / theblueturtle_ (CC-BY 4.0).',
+  },
+};
