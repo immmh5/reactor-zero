@@ -1,13 +1,7 @@
 node_modules/
 build/
-dist/
 coverage/
 .DS_Store
 *.log
 .env*
 !.env.example
-.git
-dist/
-node_modules/
-*.zip
-public/lab-guardian-reactor-zero-release.zip
