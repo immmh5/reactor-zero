@@ -93,3 +93,4 @@ The **Stoichiometry Academy** features genuine Babylon.js 3D atom and molecule g
 - **Tier 2 (Refinery Qualification)**: Mass balance calculations and mole ratio derivations ($80\%$ passing score required to unlock the Mole Ratio Vault).
 - **Tier 3 (Master Reactor Certification)**: Multi-step stoichiometry and butane reaction matrix calculations required to penetrate the Containment Warden boss shields.
 - **Visual Companion**: Live pedagogical diagrams alongside every question explaining coefficients, molar masses, and conversion roadmaps.
+
